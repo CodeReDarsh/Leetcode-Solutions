@@ -11,7 +11,7 @@ class Solution1:
             my_set.add(smap[a])
         return True
     
-# crazy good solution 2 (this is like 1 liner and kinda cheating kinda not lol?)
+# cursed solution 2 (this is like 1 liner and crazy smart)
 class Solution2:
     def isIsomorphic2(self, s: str, t: str) -> bool:
         return len(set(zip(s,t))) == len(set(s)) == len(set(t))
