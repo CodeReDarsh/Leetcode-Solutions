@@ -11,8 +11,8 @@
 I went on hiatus form LC since college ramped up and I was bad at managing my 2 jobs with classes :sob: but hey I'm back baby, winter vacations have started and I'm gonna get back to the grind.
 
 ---
-**Problems solved:**
+**Problems solved: 16**
 
-**Problems to solve:**
+**Problems to solve: 71**
 
-_**Total problems I should have solved since day 1:**_
+_**Total problems I should have solved since day 1: 87**_

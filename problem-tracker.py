@@ -13,14 +13,17 @@ questions_2_solve = tot_questions - questions_solved
 # Updating README
 old_rd = lc_sol_dir / "README.md"
 new_rd = Path(old_rd.parent, f"{old_rd.stem}-temp{old_rd.suffix}")
-old_rd.rename(new_rd)
+
+new_rd.touch()
 
 """
-Bug: after the rename statement above executes, the file is not renamed and the program tries
-to read and write from the same file? but that doesn't happen and it just ends up renaming the file?
+Bug fixed by creating new temp file, writing to it and then deleting the old file and renaming new one.
+Originally I was trying to rename the old file to README-temp.md after which I was trying to create a new file via open(lc_sol_dir / "README.md", "w").
+I would then try to read from README-temp and write into README. I assumed it would rename the old file in time before trying to create a new readme file 
+but that wasn't working for some reason and the program would run but not do anything other than just rename the readme file.
 """
 
-with open(new_rd, "r") as reader, open(lc_sol_dir / "README.md", "w") as writer:
+with open(old_rd, "r") as reader, open(new_rd, "w") as writer:
     for line in reader:
         if "**Problems solved:" in line:
             writer.write(f"**Problems solved: {questions_solved}**\n")
@@ -33,5 +36,6 @@ with open(new_rd, "r") as reader, open(lc_sol_dir / "README.md", "w") as writer:
 
 try:
     old_rd.unlink()
+    new_rd.rename(Path(new_rd.parent, f"README.md"))
 except Exception as e:
     print(f"Error while deleting file using pathlib: {e}")
