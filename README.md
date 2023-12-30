@@ -13,6 +13,6 @@ I went on hiatus form LC since college ramped up and I was bad at managing my 2 
 ---
 **Problems solved: 16**
 
-**Problems to solve: 71**
+**Problems to solve: 74**
 
-_**Total problems I should have solved since day 1: 87**_
+_**Total problems I should have solved since day 1: 90**_
